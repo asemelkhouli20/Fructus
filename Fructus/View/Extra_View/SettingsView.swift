@@ -30,7 +30,7 @@ struct SettingsView: View {
                         //normal Text
                         ExtraViewContentWithTextOrLinkOrEmpty(title: "Developer",contentText: "Asem Elkhouli")
                         ExtraViewContentWithTextOrLinkOrEmpty(title: "Designer",contentText: "Lora Edoandy")
-                        ExtraViewContentWithTextOrLinkOrEmpty(title: "Compatibillty",contentText: "iOS 15")
+                        ExtraViewContentWithTextOrLinkOrEmpty(title: "Compatibillty",contentText: "iOS 15") 
                         //Link Text
                         ExtraViewContentWithTextOrLinkOrEmpty(title: "WebSite", contentLink: "apple", contentWebLink: "apple.com")
                         //normal Text
