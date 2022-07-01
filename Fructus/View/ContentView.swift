@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State  var isSettingsViewShow = false
     var body: some View {
         NavigationView{
             List{
@@ -15,11 +16,19 @@ struct ContentView: View {
                     NavigationLink(destination: {DetailtFruitView(fruit: fruit)}) {
                         FruitRowView(name: fruit.title, subtitle: fruit.headline).padding(.vertical,8)
                     }
-                   
+                    
                 }
             }.listStyle(.grouped)
+            
+                .toolbar{ ToolbarItem(placement: .navigationBarTrailing) {
+                    Button( action: { isSettingsViewShow=true} ) { Image(systemName: "slider.horizontal.3") }
+                        .sheet(isPresented: $isSettingsViewShow) {SettingsView()}
+                }//ToolBar End
+                    
+                }
                 .navigationTitle("Fruit")
         }
+        .navigationViewStyle(.stack)
         
     }
 }
@@ -27,6 +36,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-           
+        
     }
 }
